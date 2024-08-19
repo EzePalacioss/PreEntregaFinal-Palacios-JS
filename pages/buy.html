@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body class="">
+    <header class="header">
+        <div class="logo">
+            <span class="logo-text">ViajáConChuchi</span>
+        </div>
+        <nav class="nav">
+        <ul class="nav-list">
+            <li class="nav-item">
+                <a href="../index.html" class="nav-link">Inicio</a>
+            </li>
+            <li class="nav-item">
+                <a href="" class="nav-link">Viajes</a>
+            </li>
+            <li class="nav-item">
+                <a href="" class="nav-link">Contacto</a>
+            </li>
+        </ul>
+        </nav>
+        <label class="switch">
+            <input type="checkbox" class="input__check">
+            <span class="slider"></span>
+        </label>
+</header>
+
+    <h1>Ingrese la información para el pago</h1>
+    <form action="" class="usuarioForm">
+        <div class="usuarioForm__datos">
+            <label for="name">NOMBRE</label>
+            <input type="text" id="name" placeholder="Ingrese su nombre">
+    
+            <label for="lastname">APELLIDO</label>
+            <input type="text" id="lastname" placeholder="Ingrese su apellido">
+    
+            <label for="age">EDAD</label>
+            <input type="number" id="age" placeholder="Ingrese su edad">
+        </div>
+
+    <div class="usuarioForm__selects">
+        <label for="select">BOLETO</label>
+        <select name="" id="select">
+            <option value="">Primera clase</option>
+            <option value="">Clase media</option>
+        </select>
+
+        <label for="select">MENU</label>
+        <select name="" id="select">
+            <option value="">Gourmet</option>
+            <option value="">Vegano</option>
+            <option value="">Celiaco</option>
+        </select>
+
+        <label for="select">ESTADIA</label>
+        <select name="" id="select">
+            <option value="">3 días y 2 noches</option>
+            <option value="">5 días y 4 noches</option>
+            <option value="">8 días y 7 noches</option>
+            <option value="">12 días y 7 noches</option>
+        </select>
+    </div>
+    </form>
+    <button class="buttonReservar">Reservar</button>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="../js/library.js"></script>
+</body>
+</html>

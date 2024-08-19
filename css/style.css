@@ -1,0 +1,276 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.header {
+  display: flex;
+  background-color: #1b3039;
+  justify-content: space-between;
+  align-items: center;
+  height: 85px;
+  padding: 5px 10%;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.nav-item {
+  display: inline-block;
+  padding: 0 20px;
+  list-style: none;
+}
+
+.nav-link {
+  font-size: 17px;
+  color: #eceff1;
+  text-decoration: none;
+}
+
+.logo-text {
+  font-size: 24px;
+  color: #eceff1;
+  margin-left: 15px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.main-img {
+  position: relative;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+.main-img img {
+  width: 100%;
+  height: 600px;
+  display: block;
+}
+
+.main-img h1 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #efe6e6;
+  text-align: center;
+  font-size: 3rem;
+  padding: 0 10px;
+  z-index: 10;
+  text-shadow: 4px 4px 2px rgba(0, 0, 0, 0.6);
+  font-weight: bold;
+}
+
+.destino {
+  list-style: none;
+  width: 100%;
+  max-width: 300px;
+  margin: 0;
+  padding: 0;
+}
+.destino img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.destinos {
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.destinosLista {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-width: 1200px;
+}
+
+.destino {
+  position: relative;
+  overflow: hidden;
+}
+
+.destino-content {
+  position: relative;
+}
+
+.destino img {
+  width: 100%;
+  height: 200px;
+  display: block;
+}
+
+.destino-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 0.5rem;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  text-align: center;
+}
+
+.destino-button {
+  display: block;
+  margin: 1rem auto;
+  padding: 0.5rem 1rem;
+  background-color: #007bff;
+  color: white;
+  border-radius: 5px;
+  font-weight: bold;
+  border: none;
+  text-decoration: none;
+}
+
+.destino-button:hover {
+  background-color: #0056b3;
+}
+
+/* The switch - the box around the slider */
+.switch {
+  font-size: 17px;
+  position: relative;
+  display: inline-block;
+  width: 3.5em;
+  height: 2em;
+  transform-style: preserve-3d;
+  perspective: 500px;
+  animation: toggle__animation 3s infinite;
+}
+
+.switch::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  filter: blur(20px);
+  z-index: -1;
+  border-radius: 50px;
+  background-color: #d8ff99;
+  background-image: radial-gradient(at 21% 46%, hsl(183, 65%, 60%) 0px, transparent 50%), radial-gradient(at 23% 25%, hsl(359, 74%, 70%) 0px, transparent 50%), radial-gradient(at 20% 1%, hsl(267, 83%, 75%) 0px, transparent 50%), radial-gradient(at 86% 87%, hsl(204, 69%, 68%) 0px, transparent 50%), radial-gradient(at 99% 41%, hsl(171, 72%, 77%) 0px, transparent 50%), radial-gradient(at 55% 24%, hsl(138, 60%, 62%) 0px, transparent 50%);
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(253, 254, 254, 0.862745098);
+  transition: 0.4s;
+  border-radius: 30px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 1.4em;
+  width: 1.4em;
+  left: 0.3em;
+  bottom: 0.35em;
+  transition: 0.4s;
+  border-radius: 50%;
+  box-shadow: rgba(0, 0, 0, 0.17) 0px -10px 10px 0px inset, rgba(0, 0, 0, 0.09) 0px -1px 15px -8px;
+  background-color: #ff99fd;
+  background-image: radial-gradient(at 81% 39%, hsl(327, 79%, 79%) 0px, transparent 50%), radial-gradient(at 11% 72%, hsl(264, 64%, 79%) 0px, transparent 50%), radial-gradient(at 23% 20%, hsl(75, 98%, 71%) 0px, transparent 50%);
+}
+
+.input__check:checked + .slider {
+  background-color: #17202A;
+}
+
+.input__check:checked + .slider:before {
+  transform: translateX(1.5em);
+}
+
+@keyframes toggle__animation {
+  0%, 100% {
+    transform: translateY(-10px) rotateX(15deg) rotateY(-20deg);
+  }
+  50% {
+    transform: translateY(0px) rotateX(15deg) rotateY(-20deg);
+  }
+}
+.dark-mode {
+  background-color: #17202A;
+}
+
+.light-mode {
+  background-color: #efe6e6;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 1rem;
+  color: rgb(17, 18, 18);
+  margin-top: 50px;
+}
+
+.usuarioForm {
+  display: flex;
+  justify-content: space-between;
+  max-width: 90%;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 10px;
+  border: 2px solid black;
+  background-color: #233b37;
+}
+
+.usuarioForm__datos,
+.usuarioForm__selects {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  flex: 1;
+  margin: 70px;
+}
+
+label {
+  margin-bottom: 5px;
+  color: azure;
+  border-radius: 5px;
+}
+
+input, select {
+  padding: 8px;
+  width: 100%;
+  border-radius: 5px;
+  border: none;
+}
+
+.usuarioForm__datos {
+  margin-right: 20px;
+}
+
+.buttonReservar {
+  display: block;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 5px;
+  border: none;
+  background-color: #007bff;
+  color: azure;
+  cursor: pointer;
+}
+
+/*# sourceMappingURL=style.css.map */
