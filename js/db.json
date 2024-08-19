@@ -1,0 +1,8 @@
+[
+    { "pais": "Bariloche, Argentina", "precios": 550000 },
+    { "pais": "Buzios, Brasil", "precios": 650000 },
+    { "pais": "Cancún, Mexico", "precios": 1200000 },
+    { "pais": "Paris, Francia", "precios": 2200000 },
+    { "pais": "Islas Maldivas", "precios": 10000000 },
+    { "pais": "Viña del mar", "precios": 340000 }
+]

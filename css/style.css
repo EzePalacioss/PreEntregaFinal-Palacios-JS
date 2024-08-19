@@ -128,6 +128,7 @@
   font-weight: bold;
   border: none;
   text-decoration: none;
+  text-align: center;
 }
 
 .destino-button:hover {

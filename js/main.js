@@ -1,4 +1,3 @@
-// Array de viajes
 
 class Viaje{
     constructor(pais, precios){
@@ -7,15 +6,14 @@ class Viaje{
     }
 }
 
-const Destinos = [
-new Viaje('Bariloche, Argentina', 550000),
-new Viaje('Buzios, Brasil', 650000),
-new Viaje('Cancún, Mexico', 1200000),
-new Viaje('Paris, Francia', 2200000),
-new Viaje('Islas Malvidas', 10000000),
-new Viaje('Viña del mar', 340000),
-]
-
+const imagenes = {
+    "Bariloche, Argentina": "bariloche.jpg",
+    "Buzios, Brasil": "buzios.jpg",
+    "Cancún, Mexico": "cancun.jpg",
+    "Paris, Francia": "free-tour-torre-eiffel-589x392.avif",
+    "Islas Maldivas": "malvidas.webp",
+    "Viña del mar": "viñadelmardos.jpg"
+};
 
 const ulDestinos = document.getElementById('destino')
 const destinosElementos = ulDestinos.getElementsByClassName('destino')
@@ -27,12 +25,50 @@ function destinos(){
         const precio = i < Destinos.length ? `$${Destinos[i].precios.toLocaleString()}` : 'Destino no disponible';
         
         destinoInfo.innerHTML = `
+        <a href="../pages/buy.html" class="destino-button">Seleccionar</a>
             ${Destinos[i]?.pais || 'Destino no disponible'} - ${precio}
-            <a href="../pages/buy.html "class="destino-button">Seleccionar</a>
         `;
     }
 }
 
+
+async function cargarDestinos() {
+    try {
+        const response = await fetch('js/db.json'); 
+        const data = await response.json();
+
+        mostrarDestinos(data);
+    } catch (error) {
+        console.error('Error al cargar los destinos:', error);
+    }
+}
+
+
+function mostrarDestinos(destinos) {
+    const ulDestinos = document.getElementById('destino');
+    ulDestinos.innerHTML = ''; 
+
+    destinos.forEach((viaje) => {
+        const li = document.createElement('li');
+        li.classList.add('destino');
+
+        const imagen = imagenes[viaje.pais] || 'default.jpg';
+
+        li.innerHTML = `
+            <div class="destino-content">
+                <img src="img/${imagen}" alt="${viaje.pais}">
+                <div class="destino-info">
+                    <p>${viaje.pais} - $${viaje.precios.toLocaleString()}</p>
+                    <a href="pages/buy.html" class="destino-button">Seleccionar</a>
+                </div>
+            </div>
+        `;
+
+        ulDestinos.appendChild(li);
+    });
+}
+
+document.addEventListener('DOMContentLoaded', cargarDestinos);
 
 
 //darkmode-lightmode
@@ -56,4 +92,5 @@ function mode (){
 }
 mode ()
 destinos()
+
 
