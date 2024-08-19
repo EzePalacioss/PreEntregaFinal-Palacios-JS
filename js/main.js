@@ -18,32 +18,6 @@ const imagenes = {
 const ulDestinos = document.getElementById('destino')
 const destinosElementos = ulDestinos.getElementsByClassName('destino')
 
-function destinos(){
-    for (let i = 0; i < destinosElementos.length; i++) {
-        const destinoInfo = destinosElementos[i].querySelector('.destino-info');
-        const destinoContent = destinosElementos[i].querySelector('.destino-content');
-        const precio = i < Destinos.length ? `$${Destinos[i].precios.toLocaleString()}` : 'Destino no disponible';
-        
-        destinoInfo.innerHTML = `
-        <a href="../pages/buy.html" class="destino-button">Seleccionar</a>
-            ${Destinos[i]?.pais || 'Destino no disponible'} - ${precio}
-        `;
-    }
-}
-
-
-async function cargarDestinos() {
-    try {
-        const response = await fetch('js/db.json'); 
-        const data = await response.json();
-
-        mostrarDestinos(data);
-    } catch (error) {
-        console.error('Error al cargar los destinos:', error);
-    }
-}
-
-
 function mostrarDestinos(destinos) {
     const ulDestinos = document.getElementById('destino');
     ulDestinos.innerHTML = ''; 
@@ -59,7 +33,7 @@ function mostrarDestinos(destinos) {
                 <img src="img/${imagen}" alt="${viaje.pais}">
                 <div class="destino-info">
                     <p>${viaje.pais} - $${viaje.precios.toLocaleString()}</p>
-                    <a href="pages/buy.html" class="destino-button">Seleccionar</a>
+                    <a href="../pages/buy.html" class="destino-button">Seleccionar</a>
                 </div>
             </div>
         `;
@@ -69,6 +43,19 @@ function mostrarDestinos(destinos) {
 }
 
 document.addEventListener('DOMContentLoaded', cargarDestinos);
+
+async function cargarDestinos() {
+    try {
+        const response = await fetch('js/db.json'); 
+        const data = await response.json();
+
+        mostrarDestinos(data);
+    } catch (error) {
+        console.error('Error al cargar los destinos:', error);
+    }
+}
+
+
 
 
 //darkmode-lightmode
