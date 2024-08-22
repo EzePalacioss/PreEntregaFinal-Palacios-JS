@@ -20,3 +20,24 @@ for (let i = 0; i < botones.length; i++) {
             }
         });
 })}
+
+Toastify({
+    
+    text: "¡Bienvenido a nuestra página!",
+    
+    duration: 3000
+    
+}).showToast();
+
+
+const boton = document.getElementById('buttoncontact').addEventListener('click', (e)=>{
+    e.preventDefault();
+    Toastify({
+    
+        text: "Mensaje enviado!",
+        gravity: 'bottom',
+        position: 'center',
+        duration: 3000
+        
+    }).showToast();
+})

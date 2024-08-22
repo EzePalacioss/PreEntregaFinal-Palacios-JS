@@ -36,6 +36,26 @@
   cursor: pointer;
 }
 
+footer {
+  display: flex;
+  justify-content: center;
+  background-color: rgba(58, 52, 52, 0.742);
+  color: white;
+  padding: 30px;
+}
+footer img {
+  height: 80px;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+footer img:hover {
+  transform: scale(1.1);
+}
+footer p {
+  padding: 0 2rem 0 2rem;
+  font-size: 1.1rem;
+}
+
 .main-img {
   position: relative;
   width: 100%;
@@ -219,6 +239,86 @@
   background-color: #efe6e6;
 }
 
+.contact label {
+  width: 30%;
+}
+
+.contact {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  width: 100%;
+}
+.contact label {
+  color: white;
+  padding: 10px 0;
+  font-size: 1.2rem;
+  font-family: "Bebas Neue", cursive;
+  align-items: center;
+}
+.contact input,
+.contact textarea {
+  width: 100%;
+  max-width: 400px;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  transition: box-shadow 0.3s ease;
+  align-items: center;
+}
+.contact input:focus,
+.contact textarea:focus {
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  outline: none;
+}
+.contact textarea {
+  min-height: 150px;
+}
+
+.contact__form {
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(10, 47, 86, 0.8235294118);
+  padding: 50px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.791);
+  max-width: 800px;
+  margin: 0 20px;
+  width: 90%;
+  margin: 0 auto;
+}
+.contact__form button {
+  width: 10%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+}
+
+.contact_h2 {
+  font-size: 2.5rem;
+  color: rgba(145, 158, 161, 0.7058823529);
+  font-family: "Raleway", sans-serif;
+  font-weight: bold;
+  padding: 2.5rem;
+}
+
+.destinoApi h2 {
+  color: #0056b3;
+}
+
+.destinoApi img {
+  width: 100%;
+  height: 300px;
+  background-size: cover;
+}
+
 h1 {
   text-align: center;
   margin-bottom: 1rem;
@@ -245,14 +345,15 @@ h1 {
   flex: 1;
   margin: 70px;
 }
-
-label {
+.usuarioForm__datos label,
+.usuarioForm__selects label {
   margin-bottom: 5px;
   color: azure;
   border-radius: 5px;
 }
-
-input, select {
+.usuarioForm__datos input, .usuarioForm__datos select,
+.usuarioForm__selects input,
+.usuarioForm__selects select {
   padding: 8px;
   width: 100%;
   border-radius: 5px;

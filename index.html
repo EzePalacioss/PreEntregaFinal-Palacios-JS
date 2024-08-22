@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body class="light-mode">
@@ -15,13 +16,13 @@
             <nav class="nav">
             <ul class="nav-list">
                 <li class="nav-item">
-                    <a href="" class="nav-link">Inicio</a>
+                    <a href="#inicio" class="nav-link">Inicio</a>
                 </li>
                 <li class="nav-item">
-                    <a href="" class="nav-link">Viajes</a>
+                    <a href="#destinos" class="nav-link">Viajes</a>
                 </li>
                 <li class="nav-item">
-                    <a href="" class="nav-link">Contacto</a>
+                    <a href="#contacto" class="nav-link">Contacto</a>
                 </li>
             </ul>
             </nav>
@@ -30,14 +31,14 @@
                 <span class="slider"></span>
             </label>
     </header>
-    <main>
+    <main id="inicio">
         <div class="main-img">
             <img src="img/sonevajanichaptertwobyakshamabdulghadir_5-soneva-feb21-pr.webp" alt="">
             <h1>¡Vive unas vacaciones de lujo y aventurate en nuestras mejores ofertas!</h1>
         </div>
 
 
-        <section class="destinos">
+        <section class="destinos" id="destinos">
             <ul class = "destinosLista" id="destino">
                 <li class="destino">
                     <div class="destino-content">
@@ -77,10 +78,40 @@
                 </li>
             </ul>
         </section>
+
+
+    <h2 class="contact_h2">Contacto</h2>
+<section class="contact" id="contacto">
+<form action="#" class="contact__form" id="contactForm">
+
+<label for="nombre">Nombre</label>
+<input type="text" id="nombre" placeholder="Ingrese su nombre">
+
+<label for="apellido">Apellido</label>
+<input type="text" id="apellido" placeholder="Ingrese su apellido">
+
+<label for="email">Email</label>
+<input type="email" id="email" placeholder="example@gmail.com">
+
+<textarea name="comentario" id="textarea" placeholder="Deja aqui tu mensaje"></textarea>
+<button id="buttoncontact">Enviar</button>
+</form>
+</section>
+
+
+<section class="destinoApi" id="destinoApi">
+    <ul class="destinosLista" id="destinoApis">
+    </ul>
+</section>
+
     </main>
 <footer>
-
+    <img src="img/chuchi.jpg" alt="">
+<p>© Todos los derechos reservados</p>
+    <img src="img/chuchi.jpg" alt="">
 </footer>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+
 <script src="js/db.json"></script>
 <script src="js/library.js"></script>
 <script src="js/main.js"></script>

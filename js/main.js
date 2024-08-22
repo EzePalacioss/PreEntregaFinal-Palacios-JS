@@ -55,9 +55,6 @@ async function cargarDestinos() {
     }
 }
 
-
-
-
 //darkmode-lightmode
 
 function mode (){
@@ -77,7 +74,36 @@ function mode (){
         localStorage.setItem('modo', body.className)
     });
 }
+
+
+document.addEventListener('DOMContentLoaded', function () {
+    const accessKey = 'We3K25c0D2CNfQDLlRnPZRxkaljNYB0RTx0artPfXmQ'; 
+    const query = 'cityscape tourist destination';
+    const endpoint = `https://api.unsplash.com/photos/random?count=3&query=travel&client_id=${accessKey}`;
+
+    fetch(endpoint)
+        .then(response => response.json())
+        .then(images => {
+            const destinosLista = document.getElementById('destino');
+            
+            images.forEach(image => {
+                const li = document.createElement('li');
+                li.classList.add('destino');
+
+                const destinoContent = `
+                <div class="destinoApi">
+                        <h2>¡Viaja con nosotros!</h2>
+                        <img src="${image.urls.regular}" alt="${image.alt_description}">
+                    </div>
+                `;
+                
+                li.innerHTML = destinoContent;
+                destinosLista.appendChild(li);
+            });
+        })
+        .catch(error => console.error('Error al cargar imágenes de Unsplash:', error));
+});
+
 mode ()
 destinos()
-
-
+cargarDestinos()

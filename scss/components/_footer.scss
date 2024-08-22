@@ -1,0 +1,22 @@
+footer{
+    display: flex;
+    justify-content: center;
+    background-color: rgba(58, 52, 52, 0.742);
+    color: white;
+    padding: 30px;
+
+    img{
+        height: 80px;
+        border-radius: 50%;
+        transition: all 0.3s ease;
+
+        &:hover{
+            transform: scale(1.1);
+        }
+    }
+
+    p{
+        padding: 0 2rem 0 2rem;
+        font-size: 1.1rem;
+    }
+}
